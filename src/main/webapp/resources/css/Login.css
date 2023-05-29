@@ -1,0 +1,81 @@
+.container {
+  position: absolute;
+  top: 20%;
+}
+
+#login_text {
+width:150px; margin: 0 auto;
+padding : 50px 20px 0 0;
+font-size:40px;
+left: 22%;
+position: relative;
+}
+
+.logo {
+	position: relative;
+	left: 55%;
+}
+
+#id_text {
+	position: relative;
+	left: 59%;
+	font-size: 22px;
+	width:40em;
+}
+
+#pw_text {
+	position: relative;
+	left: 59%;
+	top:15px;
+	font-size: 22px;
+	width:40em;
+}
+
+#id_link_search {
+	margin : 10px 53px 0 300px;
+    float: left;
+    width:150px;
+    box-sizing: border-box;
+    color: black;
+    left: 298px;
+    position: relative;
+}
+
+#pw_link_search {
+	margin : 10px 0 0 0;
+    float: left;
+    width:130px;
+    box-sizing: border-box;
+    color: black;
+    left: 260px;
+    position: relative;
+}
+
+.search_container {
+	width: 90%;
+    margin: 10px auto;
+    display: flex;
+}
+
+#login_btn {
+	position: relative;
+	left: 59%;
+	font-size: 22px;
+	width:12em;
+	top: 20px;
+}
+
+#online_account {
+	margin : 30px 60px 0 652px;
+    float: left;
+    width:150px;
+    box-sizing: border-box;
+    color: black;
+}
+
+#join {
+	margin : 13px 0 0 -6px;
+    float: left;
+    width:130px;
+    box-sizing: border-box;
+}

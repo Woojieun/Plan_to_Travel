@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <!--CDN으로 사용함-->
+   <meta charset="UTF-8">
+   <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+<style>
+   /* 리스트 css */
+   .column {
+      border: 1px solid #cecece;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      width: 155px;
+   }
+
+   .container-fluid {
+      margin-top: 20px;
+   }
+
+   .container-fluid .card {
+      margin-left: auto;
+      margin-right: auto;
+   }
+
+   /* 이동 타켓 */
+   .card-placeholder {
+      border: 1px dotted rgb(255, 0, 0);
+      margin: 0 10px 10px 0;
+      height: 20px;
+      margin-left: auto;
+      margin-right: auto;
+      background-color: rgb(231, 136, 107);
+   }
+
+   /* 마우스 포인터를 손가락으로 변경 */
+   .card:not(.no-move) .card-header {
+      cursor: pointer;
+   }
+   
+   .container-fluid {
+   	  height: 600px;
+   }
+   
+   .card-text {
+   font-size : 10px;
+   }
+   
+   .createBox1, .createBox2, .createBox3, .createBox4, .createBox5, .createBox6, .createBox7 {
+   position: absolute;
+   right: 5px;
+   bottom: 5px;
+   }
+   
+   .shortable_content {
+      	  width: 1100px;
+   	  height: 600px;
+   }
+   
+   .deleteBox {
+   float:right;
+   }
+   
+   .box1_content {
+   vertical-align:middle;
+   height: 50px;
+   position: relative;
+   }
+   
+   .box2 .box3 .box4 .box5 .box6 .box7 {
+   width: 155px;
+   }
+   
+   .box1_content_test1 {
+   width: 150px;
+     position: absolute;
+  top: 50%;
+  margin-top: -13px;
+   }
+   
+   .deleteBox {
+   width: 20px;
+  margin-top: 10px;
+  border: 1px solid black;
+   }
+
+</style>
+
+<body>
+<div class="container-fluid shortable_content">
+
+<div class="row"> <!-- 여기에 날짜 넣기 -->
+<div class="col column">5.15</div> <!-- 여기 길이와 밑에 아래의 세로 리스트 박스 길이 맞추기 -->
+<div class="col column">5.16</div>
+<div class="col column">5.17</div>
+<div class="col column">5.18</div>
+<div class="col column">5.19</div>
+<div class="col column">5.20</div>
+<div class="col column">5.21</div>
+</div>
+      <div class="row">
+         <!-- 세로 리스트 박스 -->
+         <div class="column box1">
+         <div class="text-white mb-3 box1_content" style="background-color: blue;">
+         <div class="box1_content_test">
+         <label class="box1_content_test1">card 1</label>
+         <p class="deleteBox">x</p>
+         </div>
+         </div>
+            <!-- 각 카드 리스트 박스 -->
+         <div class="text-white mb-3 box1_content" style="background-color: rgb(255, 143, 143);">
+         <div class="box1_content_test">
+         <label class="box1_content_test1">card 1</label>
+         <p class="deleteBox">x</p>
+         </div>
+         </div>
+            <label class="createBox1"> [추가]</label>
+         </div>
+         
+         
+         <!-- 세로 리스트 박스 -->
+         <div class="col column box2">
+            <!-- 각 카드 리스트 박스 -->
+         <div class="text-white mb-3 box1_content" style="background-color: rgb(255, 143, 143);">
+         <div class="box1_content_test">
+         <label class="box1_content_test1">card 1</label>
+         <p class="deleteBox">x</p>
+         </div>
+         </div>
+            <label class="createBox2"> [추가]</label>
+         </div>
+         
+         
+         <!-- 세로 리스트 박스 -->
+         <div class="col column box3">
+            <!-- 각 카드 리스트 박스 -->
+         <div class="text-white mb-3 box1_content" style="background-color: rgb(255, 143, 143);">
+         <div class="box1_content_test">
+         <label class="box1_content_test1">card 1</label>
+         <p class="deleteBox">x</p>
+         </div>
+         </div>
+            <!-- 각 카드 리스트 박스 -->
+         <div class="text-white mb-3 box1_content" style="background-color: rgb(255, 143, 143);">
+         <div class="box1_content_test">
+         <label class="box1_content_test1">card 1</label>
+         <p class="deleteBox">x</p>
+         </div>
+         </div>
+            <!-- 각 카드 리스트 박스 -->
+         <div class="text-white mb-3 box1_content" style="background-color: rgb(255, 143, 143);">
+         <div class="box1_content_test">
+         <label class="box1_content_test1">card 1</label>
+         <p class="deleteBox">x</p>
+         </div>
+         </div>
+            <label class="createBox3"> [추가]</label>
+         </div>
+         
+         
+         
+         <!-- 세로 리스트 박스 -->
+         <div class="col column box4">
+            <!-- 각 카드 리스트 박스 -->
+         <div class="text-white mb-3 box1_content" style="background-color: rgb(255, 143, 143);">
+         <div class="box1_content_test">
+         <label class="box1_content_test1">card 1</label>
+         <p class="deleteBox">x</p>
+         </div>
+         </div>
+            <!-- 각 카드 리스트 박스 -->
+         <div class="text-white mb-3 box1_content" style="background-color: rgb(255, 143, 143);">
+         <div class="box1_content_test">
+         <label class="box1_content_test1">card 1</label>
+         <p class="deleteBox">x</p>
+         </div>
+         </div>
+            <label class="createBox4"> [추가]</label>
+         </div>
+         
+         
+         
+         <!-- 세로 리스트 박스 -->
+         <div class="col column box5">
+            <!-- 각 카드 리스트 박스 -->
+         <div class="text-white mb-3 box1_content" style="background-color: rgb(255, 143, 143);">
+         <div class="box1_content_test">
+         <label class="box1_content_test1">card 1</label>
+         <p class="deleteBox">x</p>
+         </div>
+         </div>
+            <!-- 각 카드 리스트 박스 -->
+         <div class="text-white mb-3 box1_content" style="background-color: rgb(255, 143, 143);">
+         <div class="box1_content_test">
+         <label class="box1_content_test1">card 1</label>
+         <p class="deleteBox">x</p>
+         </div>
+         </div>
+            <label class="createBox5"> [추가]</label>
+         </div>
+         
+         
+         
+         <!-- 세로 리스트 박스 -->
+         <div class="col column box6">
+            <!-- 각 카드 리스트 박스 -->
+         <div class="text-white mb-3 box1_content" style="background-color: rgb(255, 143, 143);">
+         <div class="box1_content_test">
+         <label class="box1_content_test1">card 1</label>
+         <p class="deleteBox">x</p>
+         </div>
+         </div>
+            <!-- 각 카드 리스트 박스 -->
+         <div class="text-white mb-3 box1_content" style="background-color: rgb(255, 143, 143);">
+         <div class="box1_content_test">
+         <label class="box1_content_test1">card 1</label>
+         <p class="deleteBox">x</p>
+         </div>
+         </div>
+            <label class="createBox6"> [추가]</label>
+         </div>
+         
+         
+         <!-- 세로 리스트 박스 -->
+         <div class="col column box7">
+            <!-- 각 카드 리스트 박스 -->
+         <div class="text-white mb-3 box1_content" style="background-color: rgb(255, 143, 143);">
+         <div class="box1_content_test">
+         <label class="box1_content_test1">card 1</label>
+         <p class="deleteBox">x</p>
+         </div>
+         </div>
+                        <!-- 각 카드 리스트 박스 -->
+         <div class="text-white mb-3 box1_content" style="background-color: rgb(255, 143, 143);">
+         <div class="box1_content_test">
+         <label class="box1_content_test1">card 1</label>
+         <p class="deleteBox">x</p>
+         </div>
+         </div>
+<label class="createBox7"> [추가]</label>
+         </div>
+      </div>
+   </div>
+   
+
+   
+   
+   <script>
+      $(function () {
+         $(".column").sortable({ /* ortable.JS는 테이블 메뉴를 드래그 & 드랍으로 조절할 수 있는 기능을 제공 */
+            // 드래그 앤 드롭 단위 css 선택자
+            connectWith: ".column", /* 서로 자식 엘리먼트들을 공유한다 */
+            // 움직이는 css 선택자
+            handle: ".box1_content_test1",
+            // 움직이지 못하는 css 선택자
+            cancel: ".no-move",
+            // 이동하려는 location에 추가 되는 클래스
+            placeholder: "card-placeholder",
+            // 요소를 잡는 순간 실행
+            start : function(event, ui){
+               $(this).css('background-color', 'rgb(213,222,232)');
+            },
+            // 모든 이동이 끝난 후에 마지막으로 실행
+            stop : function(event, ui){
+               $(this).css('background-color', 'transparent');
+            }
+         });
+         // 해당 클래스 하위의 텍스트 드래그를 막는다.
+         $(".column .card").disableSelection();
+      });
+
+      // 삭제 라벨
+      $(document).on('click', ".deleteBox", function(){
+         $(this).parent().parent().remove();
+      });
+
+      // 추가 라벨
+      $(document).on('click', '.createBox1', function(){
+         innerHtml = ""
+         innerHtml += `<div class="text-white mb-3 box1_content" style="background-color: skyblue;">
+             <div class="box1_content_test">
+             <label class="box1_content_test1">card 1</label>
+             <p class="deleteBox">x</p>
+             </div>
+             </div>`
+         $(".box1").append(innerHtml);
+      });
+      
+      
+   // 추가 라벨
+      $(document).on('click', '.createBox2', function(){
+         innerHtml = ""
+         innerHtml += `<div class="card text-white mb-3" style="background-color: rgb(246, 175, 255);">
+                        <div class="card-header">Header
+                           <label class="deleteBox"> [삭제]</label>
+                        </div>
+                        <div class="card-body">
+                           <h5 class="card-title">card</h5>
+                           <p class="card-text">plus</p>
+                        </div>
+                     </div>`
+         $(".box2").append(innerHtml);
+      });
+   
+   
+   // 추가 라벨
+      $(document).on('click', '.createBox3', function(){
+         innerHtml = ""
+         innerHtml += `<div class="card text-white mb-3" style="background-color: rgb(246, 175, 255);">
+                        <div class="card-header">Header
+                           <label class="deleteBox"> [삭제]</label>
+                        </div>
+                        <div class="card-body">
+                           <h5 class="card-title">card</h5>
+                           <p class="card-text">plus</p>
+                        </div>
+                     </div>`
+         $(".box3").append(innerHtml);
+      });
+   
+   
+   // 추가 라벨
+      $(document).on('click', '.createBox4', function(){
+         innerHtml = ""
+         innerHtml += `<div class="card text-white mb-3" style="background-color: rgb(246, 175, 255);">
+                        <div class="card-header">Header
+                           <label class="deleteBox"> [삭제]</label>
+                        </div>
+                        <div class="card-body">
+                           <h5 class="card-title">card</h5>
+                           <p class="card-text">plus</p>
+                        </div>
+                     </div>`
+         $(".box4").append(innerHtml);
+      });
+   
+   // 추가 라벨
+      $(document).on('click', '.createBox5', function(){
+         innerHtml = ""
+         innerHtml += `<div class="card text-white mb-3" style="background-color: rgb(246, 175, 255);">
+                        <div class="card-header">Header
+                           <label class="deleteBox"> [삭제]</label>
+                        </div>
+                        <div class="card-body">
+                           <h5 class="card-title">card</h5>
+                           <p class="card-text">plus</p>
+                        </div>
+                     </div>`
+         $(".box5").append(innerHtml);
+      });
+   
+   
+   // 추가 라벨
+      $(document).on('click', '.createBox6', function(){
+         innerHtml = ""
+         innerHtml += `<div class="card text-white mb-3" style="background-color: rgb(246, 175, 255);">
+                        <div class="card-header">Header
+                           <label class="deleteBox"> [삭제]</label>
+                        </div>
+                        <div class="card-body">
+                           <h5 class="card-title">card</h5>
+                           <p class="card-text">plus</p>
+                        </div>
+                     </div>`
+         $(".box6").append(innerHtml);
+      });
+   
+   
+   // 추가 라벨
+      $(document).on('click', '.createBox7', function(){
+         innerHtml = ""
+         innerHtml += `<div class="card text-white mb-3" style="background-color: rgb(246, 175, 255);">
+                        <div class="card-header">Header
+                           <label class="deleteBox"> [삭제]</label>
+                        </div>
+                        <div class="card-body">
+                           <h5 class="card-title">card</h5>
+                           <p class="card-text">plus</p>
+                        </div>
+                     </div>`
+         $(".box7").append(innerHtml);
+      });
+   </script>
+</body>
+</html>
