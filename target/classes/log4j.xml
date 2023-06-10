@@ -11,7 +11,7 @@
 	</appender>
 	
 	<!-- Application Loggers -->
-	<logger name="com.lego.com">
+	<logger name="com.ptt.controller">
 		<level value="info" />
 	</logger>
 	
