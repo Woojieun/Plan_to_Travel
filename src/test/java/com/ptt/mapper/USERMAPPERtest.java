@@ -35,6 +35,7 @@ public class USERMAPPERtest {
 	 }
 	 */
 	
+	/*
 	// 아이디 중복검사
 	@Test
 	public void userIdChk() throws Exception{
@@ -43,4 +44,24 @@ public class USERMAPPERtest {
 		usermapper.idCheck(id);
 		usermapper.idCheck(id2);
 	}
+	*/
+	
+    /* 로그인 쿼리 mapper 메서드 테스트 */
+    @Test
+    public void userLogin() throws Exception{
+        
+        UserVO user = new UserVO();    // MemberVO 변수 선언 및 초기화
+        
+        /* 올바른 아이디 비번 입력경우 */
+        user.setuID("아이디");
+        user.setuPW("비밀번호");
+        
+        /* 올바른 않은 아이디 비번 입력경우 */
+        user.setuID("test1123");
+        user.setuPW("test1321321");
+        
+        usermapper.userLogin(user);
+        System.out.println("결과 값 : " + usermapper.userLogin(user));
+        
+    }
 }

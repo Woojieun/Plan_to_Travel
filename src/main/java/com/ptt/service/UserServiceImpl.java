@@ -23,4 +23,11 @@ public class UserServiceImpl implements UserService {
 		
 		return usermapper.idCheck(uID);
 	}
+	
+    /* 로그인 */
+    @Override
+    public UserVO userLogin(UserVO user) throws Exception {
+        
+        return usermapper.userLogin(user);
+    }
 }

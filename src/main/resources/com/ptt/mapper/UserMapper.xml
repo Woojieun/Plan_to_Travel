@@ -14,4 +14,11 @@
   		select count(*) from user where uID = #{uID}
   	
   	</select>
+  	
+  	<!-- 로그인 -->
+    <select id="userLogin" resultType="com.ptt.model.UserVO">
+     
+        select uID, uPW, uEMAIL from user where uID = #{uID} and uPW = #{uPW}
+      
+    </select>
   </mapper>

@@ -217,7 +217,8 @@
                 type: "GET",
                 url: "emailCheck?email=" + email,
                 success: function (data) {
-
+                	
+                	alert("입력하신 이메일로 인증 번호가 전송되었습니다.");
                     console.log("data : " + data);
                     code = data;
                 }
